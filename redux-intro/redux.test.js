@@ -4,7 +4,7 @@
 
 import { createStore } from 'redux'
 
-test.only('a redux store is created with a function', () => {
+test('a redux store is created with a function', () => {
   const store = createStore(() => {})
   expect(store).toBeDefined()
 })
@@ -37,6 +37,8 @@ test('we can add a DECREMENT action that reduces the store by 1', () => {
 
     if (action.type === 'INCREMENT') {
       return state + 1
+    } else if (action.type === 'DECREMENT') {
+      return state - 1
     } else {
       return state
     }
@@ -58,6 +60,8 @@ test('in case of if-else, we often use case statements:', () => {
     switch (action.type) {
       case 'INCREMENT':
         return state + 1
+        case 'DECREMENT':
+          return state - 1
       default:
         return state
     }
@@ -98,13 +102,13 @@ test('a reducer should never override any other data', () => {
 
     switch (action.type) {
       case 'SET_NAME':
-        return {
+        return Object.assign({}, state, {
           name: action.data.name
-        }
+        })
       case 'SET_COLOUR':
-        return {
+        return Object.assign({}, state, {
           colour: action.data.colour
-        }
+        })
       default:
         return state
     }
@@ -129,6 +133,8 @@ describe('multiple reducers',() => {
         return Object.assign({}, state, {
           name: action.data.name,
         })
+        case 'LOG_OUT':
+          return {}
       default:
         return state
     }

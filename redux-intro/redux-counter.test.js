@@ -1,6 +1,17 @@
 import { createStore } from 'redux'
 
-const reducer = (state, action) => {
+const reducer = (state, action, data) => {
+  state = state || 0
+  switch (action) {
+      case 'INCREMENT':
+        return state + 1
+      case 'DECREMENT':
+        return state - 1
+      case 'RESET':
+        return 0
+      case 'INCREMENT_BY':
+        return state + data.value
+  }
   return state
 }
 

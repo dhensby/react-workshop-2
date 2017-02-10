@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 // make sure you've got the API running first!
 
@@ -15,6 +15,9 @@ export default class AsyncDataExercise extends Component {
       .then(data => data.json())
       .then(posts => {
         // EXERCISE: how do I store the new posts as state on the component?
+          this.setState({
+            posts,
+          })
       })
   }
 
@@ -25,7 +28,7 @@ export default class AsyncDataExercise extends Component {
           // EXERCISE: render each post here
           // EXERCISE: abstract a <Post> component
           // and define propTypes for it
-          null
+            <PostItem key={post.id} post={post} />
         )) }
       </ul>
     )
@@ -33,9 +36,22 @@ export default class AsyncDataExercise extends Component {
   render() {
     return (
       <div>
-        { !this.state.posts && <p>Loading</p>}
+          { !this.state.posts && <p>Loading</p>}
         { this.state.posts && this.renderPosts() }
       </div>
     )
   }
+}
+
+const PostItem = props => {
+  return (
+      <li>{props.post.id}: {props.post.title}</li>
+  )
+}
+
+PostItem.propTypes = {
+  post: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+  }).isRequired,
 }

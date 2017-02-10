@@ -18,12 +18,12 @@
     "dummy-api": "json-server --watch dummy-api-db.json --port 3004",
     "middle-exercises": "cd middle-exercises && npm start",
     "redux-react-exercises": "cd redux-react-exercises && npm start",
-    "redux-intro-tests": "cd redux-intro && ../node_modules/.bin/jest redux.test.js --watch",
-    "redux-counter-tests": "cd redux-intro && ../node_modules/.bin/jest redux-counter.test.js --watch",
+    "redux-intro-tests": "cd redux-intro && jest redux.test.js --watch",
+    "redux-counter-tests": "cd redux-intro && jest redux-counter.test.js --watch",
     "react-router-exercises": "cd react-router-exercises && npm start",
     "testing-app": "cd testing-app && npm start",
-    "testing-app-tests": "cd testing-app && ../node_modules/.bin/jest",
-    "es2015-tests": "cd es2015-exercises && ../node_modules/.bin/jest es2015.test.js --watch"
+    "testing-app-tests": "cd testing-app && jest",
+    "es2015-tests": "cd es2015-exercises && jest es2015.test.js --watch"
   },
   "devDependencies": {
     "autoprefixer": "6.5.1",
