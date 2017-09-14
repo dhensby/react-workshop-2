@@ -23,11 +23,12 @@ const exercises = [
 ]
 
 const CustomLink = ({ children, to }) => (
-  <Route path={to} exact children={({ match }) => (
-    <div className={match ? 'active' : ''}>
-      {match ? '> ' : ''}<Link to={to}>{children}</Link>
-    </div>
-  )} />
+  <Route path={to} exact
+    children={props => (
+      <div className={props.match ? 'active' : ''}>
+        {props.match ? '> ' : ''}<Link to={to}>{children}</Link>
+      </div>
+    )} />
 )
 
 class App extends Component {

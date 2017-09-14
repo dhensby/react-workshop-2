@@ -23,6 +23,8 @@ In `middle-exercises/src/` you'll find a JS file for each of the exercises. In e
 
 In some of the earlier exercises we saw how we can pass props to components to make them reusable. React lets each component document what props that we can give it using `PropTypes`. This means you can look at a component and see a list of all the properties that it can take, along with the types that they should have.
 
+Note that in the past, `PropTypes` were part of the React package. Now they are in a separate package: `prop-types`. That's why we've imported them in this exercise.
+
 You can see a list of all the PropTypes here: https://facebook.github.io/react/docs/typechecking-with-proptypes.html
 
 Once you give a component a list of the properties it expects, you'll then see nice warnings logged to the console if you don't give it the right properties, or properties that it's missing.
@@ -88,6 +90,3 @@ After this set of exercises we're going to start using other third party librari
 In this example we have the `wrapWithSpecialProp` function, that takes a component, gives it a super secret property (imagine this as some library internal that they don't want to expose), and renders it.
 
 Don't worry if this takes a while to sink in - it's not that intuitive at first - but have a play with the code and see if you can rewrite it as per the comments.
-
-
-

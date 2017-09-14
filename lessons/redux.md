@@ -4,23 +4,20 @@ Now we're going to look into Redux. Redux is a tool for state management and is 
 
 Redux and React play nicely together, but you can also use Redux on its own, and at first we're going to learn Redux by just using Redux, and only move to React later.
 
+## Demo
+
+Before I let you lose on the code I'll quickly demonstrate the ideas behind Redux by creating a Redux "store".
+
 ## Get started
 
-Run `npm run redux-intro-tests`. This will run some tests on Redux that you can find in `redux-intro/redux.test.js`.
+Run `npm run redux-counter`. This will run a Redux example in `redux-intro/redux-counter.js`.
 
-Top tip: any `test('foo')` you can change to `test.only` to only run that test.
-
-Some of the tests pass, but others fail. It's your job to fix them! As you go through each test the examples get more in depth, so be sure to read each carefully. Feel free to break each one or try and change them.
-
+You will see a lot of console outputs. You need to make these outputs output the right values.
 The key parts of redux to note:
 
-your entire app's state is stored in a single object that is called the store.
-to change a state you emit an action, an object describing what happened.
-reducers take an action and produce the new state.
-
-## Counter exercise
-
-Now run `npm run redux-counter-tests`. These are a series of tests for a Redux app that you need to write. Follow the tests and implement the app so all the tests pass.
+- your entire app's state is stored in a single object that is called the store.
+- to change a state you emit an action, an object describing what happened.
+- reducers take an action and produce the new state.
 
 ## Redux and React
 
@@ -34,6 +31,9 @@ We'll use the `react-redux` package for this which provides us with two parts:
 
 To run this app locally, run `npm run redux-react-exercises`.
 
+## Redux Counter
+
+Let's take the counter and build it in React, along with some components to increment the count.
 
 ## Redux TODOS
 
@@ -54,5 +54,4 @@ For bonus points:
 
 - add another action, `TOGGLE_TODO`, which changes a TODO between done and not done. Add a button to the UI to allow a TODO to be toggled.
 
-- add another action, and another UI button, that complets every single todo.
-
+- add another action, and another UI button, that completes every single todo.

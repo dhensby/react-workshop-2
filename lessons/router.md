@@ -1,8 +1,8 @@
 ## React Router exercises
 
-React Router is the best framework for adding routing to React apps. It's current stable version is v34, but the beta of v4 just got released and so I don't teach outdated content, we're going to be using that.
+React Router is the best framework for adding routing to React apps.
 
-This does mean that the docs are still being updated and a lot of references on the internet are out of date; I recommend this site for now: https://reacttraining.com/react-router/
+The best place to find documentation on this is at: https://reacttraining.com/react-router/
 
 (PS: the middle exercises and the redux ones all used React Router! Feel free to go back at a later point and look at the code).
 

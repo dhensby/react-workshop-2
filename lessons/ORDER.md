@@ -9,6 +9,7 @@
 2. React Intro
 3. Middle exercises
 4. Redux
-5. Router
-6. Testing
-7. New Apps
+5. Redux & React
+6. Router
+7. Testing
+8. New Apps

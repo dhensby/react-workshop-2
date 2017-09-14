@@ -14,6 +14,7 @@ export default class AsyncDataExercise extends Component {
     fetch('http://localhost:3004/posts')
       .then(data => data.json())
       .then(posts => {
+        console.log('foo bar');
         // EXERCISE: how do I store the new posts as state on the component?
       })
   }
