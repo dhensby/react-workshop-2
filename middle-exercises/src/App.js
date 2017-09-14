@@ -1,33 +1,48 @@
 import React, { Component } from 'react'
 import './App.css'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import PropTypesExercise from './PropTypes'
 import AsyncDataExercise from './AsyncData'
 import AsyncDataUserInputExercise from './AsyncDataUserInput'
 import FunctionsThatReturnComponents from './FunctionsThatReturnComponents'
+import Children from './Children'
 import ChildParentCommunication from './ChildParentCommunication'
 import Context from './Context'
 
 const exercises = [
   ['prop-types', 'PropTypes', PropTypesExercise],
   ['async-data', 'Async Data', AsyncDataExercise],
-  ['async-data-user-input', 'Async Data and User Input', AsyncDataUserInputExercise],
-  ['child-parent-comms', 'Child Parent Communication', ChildParentCommunication],
+  [
+    'async-data-user-input',
+    'Async Data and User Input',
+    AsyncDataUserInputExercise,
+  ],
+  [
+    'child-parent-comms',
+    'Child Parent Communication',
+    ChildParentCommunication,
+  ],
   ['context', 'Context', Context],
-  ['functions', 'Functions that create components', FunctionsThatReturnComponents],
+  ['children', 'Children', Children],
+  [
+    'functions',
+    'Functions that create components',
+    FunctionsThatReturnComponents,
+  ],
 ]
 
 const CustomLink = ({ children, to }) => (
-  <Route path={to} exact children={({ match }) => (
-    <div className={match ? 'active' : ''}>
-      {match ? '> ' : ''}<Link to={to}>{children}</Link>
-    </div>
-  )} />
+  <Route
+    path={to}
+    exact
+    children={props => (
+      <div className={props.match ? 'active' : ''}>
+        {props.match ? '> ' : ''}
+        <Link to={to}>{children}</Link>
+      </div>
+    )}
+  />
 )
 
 class App extends Component {
@@ -41,24 +56,31 @@ class App extends Component {
           <div>
             <div className="exercise-select">
               <ul>
-                <li><CustomLink to="/">Home</CustomLink></li>
+                <li>
+                  <CustomLink to="/">Home</CustomLink>
+                </li>
                 {exercises.map(([url, title], index) => (
-                  <li key={index}><CustomLink to={`/exercise/${url}`}>{title}</CustomLink></li>
+                  <li key={index}>
+                    <CustomLink to={`/exercise/${url}`}>{title}</CustomLink>
+                  </li>
                 ))}
               </ul>
             </div>
 
             <div className="exercise-item">
-              <Route exact path="/" render={() => (
-                <p>Pick an exercise above to work on.</p>
-              )}></Route>
-
+              <Route
+                exact
+                path="/"
+                render={() => <p>Pick an exercise above to work on.</p>}
+              />
 
               {exercises.map(([url, , component]) => (
-                <Route exact
+                <Route
+                  exact
                   key={url}
                   path={`/exercise/${url}`}
-                  component={component} />
+                  component={component}
+                />
               ))}
             </div>
           </div>

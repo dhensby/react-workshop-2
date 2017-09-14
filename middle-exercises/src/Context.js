@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 // EXERCISE: add another item to the context, and output it in `SomeChildComponent`
 
@@ -23,9 +24,7 @@ ContextExercise.childContextTypes = {
 
 class SomeChildComponent extends Component {
   render() {
-    return (
-      <p>Context value: { this.context.secretValue }</p>
-    )
+    return <p>Context value: {this.context.secretValue}</p>
   }
 }
 SomeChildComponent.contextTypes = {

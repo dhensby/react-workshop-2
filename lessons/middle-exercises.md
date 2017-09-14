@@ -23,6 +23,8 @@ In `middle-exercises/src/` you'll find a JS file for each of the exercises. In e
 
 In some of the earlier exercises we saw how we can pass props to components to make them reusable. React lets each component document what props that we can give it using `PropTypes`. This means you can look at a component and see a list of all the properties that it can take, along with the types that they should have.
 
+Note that in the past, `PropTypes` were part of the React package. Now they are in a separate package: `prop-types`. That's why we've imported them in this exercise.
+
 You can see a list of all the PropTypes here: https://facebook.github.io/react/docs/typechecking-with-proptypes.html
 
 Once you give a component a list of the properties it expects, you'll then see nice warnings logged to the console if you don't give it the right properties, or properties that it's missing.
@@ -81,6 +83,11 @@ You should nearly always pass properties down to child components using props. S
 
 __Context should be used very, very sparingly.__ Most of the time `context` is useful for third party libraries who want to provide a suite of components that work together - using context for your own random values should be avoided. However, we're going to do this exercise so you're aware of them, because they are used a lot by libraries like Redux and React Router.
 
+## Children and props
+
+You can use context as a way of passing down data as we just saw, but another way is to use the [`React.children` API](https://facebook.github.io/react/docs/react-api.html#react.children) to do this. We can manipulate the array of child elements and pass new props to them.
+
+
 ## Functions that return components
 
 After this set of exercises we're going to start using other third party libraries that wrap our components with extra functionality. One pattern we'll see with a library called Redux, is that it provides functions that we should pass components to, and it alters the behaviour of our components with some extra special properties specific to that library.
@@ -88,6 +95,3 @@ After this set of exercises we're going to start using other third party librari
 In this example we have the `wrapWithSpecialProp` function, that takes a component, gives it a super secret property (imagine this as some library internal that they don't want to expose), and renders it.
 
 Don't worry if this takes a while to sink in - it's not that intuitive at first - but have a play with the code and see if you can rewrite it as per the comments.
-
-
-

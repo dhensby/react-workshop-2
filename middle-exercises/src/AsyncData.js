@@ -6,7 +6,7 @@ export default class AsyncDataExercise extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      posts: undefined
+      posts: undefined,
     }
   }
 
@@ -21,20 +21,21 @@ export default class AsyncDataExercise extends Component {
   renderPosts() {
     return (
       <ul>
-        { this.state.posts.map(post => (
-          // EXERCISE: render each post here
-          // EXERCISE: abstract a <Post> component
-          // and define propTypes for it
-          null
-        )) }
+        {this.state.posts.map(
+          post =>
+            // EXERCISE: render each post here
+            // EXERCISE: abstract a <Post> component
+            // and define propTypes for it
+            null
+        )}
       </ul>
     )
   }
   render() {
     return (
       <div>
-        { !this.state.posts && <p>Loading</p>}
-        { this.state.posts && this.renderPosts() }
+        {!this.state.posts && <p>Loading</p>}
+        {this.state.posts && this.renderPosts()}
       </div>
     )
   }

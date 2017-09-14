@@ -1,14 +1,12 @@
-import React, { Component, PropTypes } from 'react'
-
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 // note: in our own apps, we'd have each of these components in their own file
 // but for the exercise leave them all in this one!
 
 // make sure you've got the API running first!
 
-const Post = props => (
-  <p>{props.post.title}</p>
-)
+const Post = props => <p>{props.post.title}</p>
 Post.propTypes = {
   post: PropTypes.object.isRequired,
 }
@@ -17,7 +15,7 @@ export default class ChildParentCommunication extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      posts: undefined
+      posts: undefined,
     }
   }
 
@@ -35,17 +33,19 @@ export default class ChildParentCommunication extends Component {
   renderPosts() {
     return (
       <ul>
-        { this.state.posts.map(post => (
-          <li key={post.id}><Post post={post} /></li>
-        )) }
+        {this.state.posts.map(post => (
+          <li key={post.id}>
+            <Post post={post} />
+          </li>
+        ))}
       </ul>
     )
   }
   render() {
     return (
       <div>
-        { !this.state.posts && <p>Loading</p>}
-        { this.state.posts && this.renderPosts() }
+        {!this.state.posts && <p>Loading</p>}
+        {this.state.posts && this.renderPosts()}
         <AddNewPost onNewPost={post => this.onNewPost(post)} />
       </div>
     )
@@ -57,7 +57,7 @@ class AddNewPost extends Component {
     super(props)
 
     this.state = {
-      inputValue: ''
+      inputValue: '',
     }
   }
 
@@ -82,7 +82,7 @@ class AddNewPost extends Component {
 
   onInputChange(e) {
     this.setState({
-      inputValue: e.target.value
+      inputValue: e.target.value,
     })
   }
 
@@ -90,7 +90,11 @@ class AddNewPost extends Component {
     return (
       <form onSubmit={e => this.onSubmit(e)}>
         <p>Enter your new blog post:</p>
-        <input type="text" onChange={e => this.onInputChange(e)} value={this.state.inputValue} />
+        <input
+          type="text"
+          onChange={e => this.onInputChange(e)}
+          value={this.state.inputValue}
+        />
         <input type="submit" value="Save" />
       </form>
     )

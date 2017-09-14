@@ -124,3 +124,13 @@ http://codepen.io/jackfranklin/pen/bgmyzX?editors=0010
 ## Activity:
 
 - Rewrite the `WillHaveBlueText` component to be a stateless, functional component.
+
+## Functional components
+
+https://codepen.io/jackfranklin/pen/GMgwdW?editors=0010
+
+- If you have functions that are presentational, and not dealing with user interaction and events, you can define your components as functions.
+
+## Activity
+
+- How do you pass props to a functional component?
