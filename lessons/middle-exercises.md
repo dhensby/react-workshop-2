@@ -83,6 +83,11 @@ You should nearly always pass properties down to child components using props. S
 
 __Context should be used very, very sparingly.__ Most of the time `context` is useful for third party libraries who want to provide a suite of components that work together - using context for your own random values should be avoided. However, we're going to do this exercise so you're aware of them, because they are used a lot by libraries like Redux and React Router.
 
+## Children and props
+
+You can use context as a way of passing down data as we just saw, but another way is to use the [`React.children` API](https://facebook.github.io/react/docs/react-api.html#react.children) to do this. We can manipulate the array of child elements and pass new props to them.
+
+
 ## Functions that return components
 
 After this set of exercises we're going to start using other third party libraries that wrap our components with extra functionality. One pattern we'll see with a library called Redux, is that it provides functions that we should pass components to, and it alters the behaviour of our components with some extra special properties specific to that library.

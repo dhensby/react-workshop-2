@@ -1,5 +1,8 @@
 {
   "scripts": {
     "start": "node scripts/start.js"
+  },
+  "devDependencies": {
+    "prettier": "1"
   }
 }
