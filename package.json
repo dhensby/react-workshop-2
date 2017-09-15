@@ -19,8 +19,8 @@
     "dummy-api": "json-server --watch dummy-api-db.json --port 3004",
     "middle-exercises": "cd middle-exercises && npm start",
     "redux-react-exercises": "cd redux-react-exercises && npm start",
-    "redux-demo": "NODE_ENV=development babel-node --presets react-app redux-intro/redux-demo.js",
-    "redux-counter": "NODE_ENV=development babel-node --presets react-app redux-intro/redux-counter.js",
+    "redux-demo": "cross-env NODE_ENV=development babel-node --presets react-app redux-intro/redux-demo.js",
+    "redux-counter": "cross-env NODE_ENV=development babel-node --presets react-app redux-intro/redux-counter.js",
     "react-router-exercises": "cd react-router-exercises && npm start",
     "testing-app": "cd testing-app && npm start",
     "testing-app-tests": "cd testing-app && ../node_modules/.bin/jest"
@@ -36,6 +36,7 @@
     "case-sensitive-paths-webpack-plugin": "1.1.4",
     "chalk": "1.1.3",
     "connect-history-api-fallback": "1.3.0",
+    "cross-env": "^5.0.5",
     "cross-spawn": "4.0.2",
     "css-loader": "0.26.0",
     "detect-port": "1.0.1",
