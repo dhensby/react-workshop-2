@@ -1,4 +1,3 @@
-TODO:
+# React workshop.
 
-- have an introduction to Jest and unit testing
-- beef up the section on testing react
+These are my notes and code for React workshops that you should totally [buy a ticket for please :)](https://www.whiteoctoberevents.co.uk/training/learn-react).
